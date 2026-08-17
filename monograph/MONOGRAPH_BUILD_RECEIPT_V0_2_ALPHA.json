@@ -1,0 +1,46 @@
+{
+  "schema": "CONSCIOUSNESS_DICTIONARY_MONOGRAPH_V0_2_ALPHA_RECEIPT_V1",
+  "generated_at": "2026-08-17",
+  "title": "The Consciousness Dictionary: An Executable Relational-Informational Lexicon of Subjectivity, Qualia, Selfhood, Memory, Affect, Intention and Agency",
+  "status": "PASS",
+  "branch": "lexicon-v0.2-phasenav",
+  "promotion_to_main": false,
+  "page_count": 228,
+  "canonical_terms": 548,
+  "valid_typed_relations": 306,
+  "registered_formulas": 20,
+  "unique_phasenav_36d_states": 548,
+  "tests": "18/18 PASS",
+  "latex_audit": {
+    "overfull_boxes": 0,
+    "undefined_references": 0,
+    "duplicate_destinations": 0
+  },
+  "pdf_preflight": {
+    "openable": true,
+    "encrypted": false,
+    "likely_scanned": false,
+    "xfa": false
+  },
+  "visual_audit": {
+    "rendered_pages": 228,
+    "contact_sheets": 15,
+    "status": "PASS",
+    "spot_checked_pages": [21, 26, 28, 30, 31, 224, 227, 228]
+  },
+  "semantic_boundaries": [
+    "PHASE_SIMILARITY != SEMANTIC_EQUIVALENCE",
+    "AFFECT != TRUTH",
+    "RESONANCE != CONSCIOUSNESS",
+    "IMPLEMENTED != PHENOMENAL"
+  ],
+  "canonical_corrections": ["0001_remove_memory_self_negative"],
+  "files": {
+    "main.tex": "c7a33fc52d2899b1c88eb8527ba3f5708e1ee5b87e87b57186d6c0c03dee5c54",
+    "lexicon.tex": "115b70b309ce285ac7887a877a194c61bd613cfa79ade4ba5aab62bfb5217fbc",
+    "formula_catalog.tex": "fcb85c0779c72fcf367851149701631e1c2ea63a0ffb1c7dc8f141be8eac6828",
+    "alphabetical_index.tex": "9d2062d79bc455b6af8366ee76cc5055c0c64ed8009af207e90217568ea66db5",
+    "The_Consciousness_Dictionary_Monograph_V0_2_ALPHA.pdf": "59d06f5e46268ce904e612c8fa695376d949a084752482b40d9074ce5afb45e6",
+    "The_Consciousness_Dictionary_Monograph_V0_2_ALPHA_SOURCE.zip": "1b6b1f36af876cca1352a7b0d5641699fbf1c38ca2e76e7c1347603d26a96490"
+  }
+}
