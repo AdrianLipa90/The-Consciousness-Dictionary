@@ -1,0 +1,43 @@
+{
+  "schema": "CONSCIOUSNESS_DICTIONARY_V0_2_ALPHA_VALIDATION_RECEIPT_V1",
+  "generated_at": "2026-08-17",
+  "branch": "lexicon-v0.2-phasenav",
+  "promotion_to_main": false,
+  "status": "PASS",
+  "term_count": 548,
+  "typed_relation_count": 306,
+  "formula_count": 20,
+  "registry_roundtrip_errors": 0,
+  "unique_phasenav_36d_vectors": 548,
+  "vector_collisions": 0,
+  "pytest": {
+    "status": "PASS",
+    "summary": "..................                                                       [100%]\n18 passed in 0.22s"
+  },
+  "ontology_validator": {
+    "status": "PASS",
+    "terms": 548,
+    "relations": 306,
+    "failures": [],
+    "warnings": [],
+    "warning_count": 0
+  },
+  "compiled_artifacts": {
+    "TERM_STATES_36D.jsonl": "56d758c54f27323ef7edcf5164d224801f182ec83cda04216953cfaeda135501",
+    "RELATION_OBSERVABLES.jsonl": "8484cd1314df4b18c21207b7fe234e71007e5c4c59aaf356cffd4abea0d36e8a",
+    "COMPILE_RECEIPT.json": "21580ecf514bfd0ce8ca5c12f2fa9009b4bfd6e896ed5bc42104bd4d43620c84"
+  },
+  "source_of_truth": {
+    "canonical_machine_registry": "ontology/registry/v0_2/ base shards + ordered append-only patches",
+    "editorial_provenance": "V0.2 working source / source hierarchy"
+  },
+  "semantic_boundaries": [
+    "PHASE_SIMILARITY != SEMANTIC_EQUIVALENCE",
+    "AFFECT != TRUTH",
+    "RESONANCE != CONSCIOUSNESS",
+    "IMPLEMENTED != PHENOMENAL"
+  ],
+  "canonical_corrections": [
+    "0001_remove_memory_self_negative"
+  ]
+}

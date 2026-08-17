@@ -1,0 +1,10 @@
+{
+  "schema":"clx2/relation-types/v0.2",
+  "types":{
+    "DEPENDS_ON":{"directed":true,"semantic":true,"blend_allowed":false},
+    "NOT_EQUIVALENT_TO":{"directed":false,"semantic":true,"blend_allowed":false,"path_blocked":true},
+    "HAS_SPECIALIZATION":{"directed":true,"semantic":true,"blend_allowed":false},
+    "CONSTRAINS_OR_SUPPORTS":{"directed":true,"semantic":true,"blend_allowed":false}
+  },
+  "rule":"PhaseNav geometry may annotate a declared edge but cannot create semantic authority or equivalence."
+}
