@@ -1,0 +1,40 @@
+{
+  "schema": "CONSCIOUSNESS_DICTIONARY_AFFECT_DETECTION_VALIDATION_V1",
+  "date": "2026-08-17",
+  "branch": "affect-detection-v0.1",
+  "base": "main@e122716020598e067d7bcb4045a128571202dced",
+  "module": "src/consciousness_dictionary/affect_detection.py",
+  "method": "transparent_lexical_surface_v1",
+  "affect_field": ["valence", "arousal", "urgency", "threat_relevance", "attachment_relevance", "reward_relevance"],
+  "hard_boundary": "AFFECT_INFERENCE != AFFECT_MODULATION != TRUTH != DIAGNOSIS",
+  "authorities": {
+    "truth": false,
+    "semantic": false,
+    "diagnostic": false,
+    "modulation": false
+  },
+  "local_validation": {
+    "status": "PASS",
+    "tests": 8,
+    "passed": 8,
+    "failed": 0,
+    "summary": "8 passed in 0.03s"
+  },
+  "remote_structure": {
+    "status": "VERIFIED",
+    "ahead_of_main": true,
+    "behind_main": false
+  },
+  "remote_ci": {
+    "status": "NOT_CONFIGURED",
+    "reason": ".github/workflows is absent on the branch"
+  },
+  "validated_invariants": [
+    "low evidence is UNKNOWN/insufficient-evidence, not silently neutral",
+    "affect estimates never grant truth or diagnostic authority",
+    "Polish and English cue paths are covered",
+    "threat relevance is salience, not assertion of an actual threat",
+    "PhaseNav-shaped affect embedding is exactly 36D and finite",
+    "temporal tracker does not retain raw input text"
+  ]
+}
