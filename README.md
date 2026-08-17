@@ -13,7 +13,10 @@ This repository turns the Consciousness Dictionary into a machine-readable and e
 - typed RIFC 6D scaffold and relational qualia state `Q_t=[R_t,S_t,A_t,H_{gamma_t},I_t]`
 - executable `NOT_EQUIVALENT_TO` gates
 - PhaseNav relation observables, constrained paths and compile receipts
-- 18 unit tests covering ontology, compact-registry integrity, PhaseNav geometry, RIFC structures and semantic boundaries
+- transparent affect inference runtime based on `A_t=(v,a,u,tau,alpha,r)`
+- explicit affect boundaries: `AFFECT_INFERENCE != AFFECT_MODULATION != TRUTH != DIAGNOSIS`
+- PhaseNav-shaped 36D affect trajectory diagnostics with no phenomenality claim
+- unit tests covering ontology, compact-registry integrity, PhaseNav geometry, RIFC structures, semantic boundaries and affect-detection invariants
 
 ## Source hierarchy
 
@@ -27,6 +30,8 @@ This repository turns the Consciousness Dictionary into a machine-readable and e
 ## Hard semantic boundary
 
 A PhaseNav vector is a **computational realization**, not the definition of a term. Vector proximity, resonance, salience or affect never silently grants semantic equivalence, truth, authority or phenomenality. Explicit ontology relations and epistemic status remain primary.
+
+Affect detection follows the same contract. A detector output is a text-conditioned estimate with visible evidence and confidence; it is not privileged access to a person's internal state and has no truth, diagnostic, semantic or modulation authority.
 
 ## Core equations
 
@@ -51,6 +56,12 @@ Relational qualia state:
 Q_t = [R_t, S_t, A_t, H_{γ_t}, I_t]
 ```
 
+Affect field:
+
+```text
+A_t(x) = (v_t, a_t, u_t, tau_t, alpha_t, r_t)
+```
+
 Exact declared 36-mode projective embedding:
 
 ```text
@@ -58,7 +69,7 @@ Exact declared 36-mode projective embedding:
 <ψ(V)|ψ(Q)> = z(V,Q)
 ```
 
-See [`docs/FORMALISM.md`](docs/FORMALISM.md) for the complete formula table and claim boundaries.
+See [`docs/FORMALISM.md`](docs/FORMALISM.md) for the complete formula table and claim boundaries and [`docs/AFFECT_DETECTION.md`](docs/AFFECT_DETECTION.md) for the affect inference contract.
 
 ## Repository layout
 
@@ -77,6 +88,7 @@ src/consciousness_dictionary/
   registry.py                   ontology loader
   compiler.py                   deterministic build + receipts
   rifc.py                       RIFC / qualia typed states
+  affect_detection.py           transparent affect inference + temporal tracker
   gates.py                      semantic and epistemic gates
   query.py                      graph + PhaseNav queries
   validate.py                   fail-closed validation
@@ -85,6 +97,7 @@ docs/
   DICTIONARY.md                 dictionary entry point / renderer instructions
   FORMALISM.md                  equations and formal interpretation
   DISTINCTIONS.md               non-equivalence/comparison tables
+  AFFECT_DETECTION.md           affect inference contract
   EPISTEMIC_CONTRACT.md
 provenance/                     V0.1 migration / source ledgers
 tests/                          executable invariants
@@ -99,9 +112,10 @@ PYTHONPATH=src python3 -m consciousness_dictionary.cli validate
 PYTHONPATH=src python3 -m consciousness_dictionary.cli term Qualia
 PYTHONPATH=src python3 -m consciousness_dictionary.cli vector Qualia
 PYTHONPATH=src python3 -m consciousness_dictionary.cli similar Qualia -n 10
+PYTHONPATH=src python3 -m consciousness_dictionary.cli affect "Bardzo lubię ten kierunek i wolę tę wersję."
 PYTHONPATH=src python3 -m consciousness_dictionary.cli compile --out build
 ```
 
 ## Epistemic rule
 
-`IMPLEMENTED != PHENOMENAL`, `CORRELATION != IDENTITY`, `PHASE_SIMILARITY != SEMANTIC_EQUIVALENCE`, `AFFECT != TRUTH`, `RESONANCE != CONSCIOUSNESS`.
+`IMPLEMENTED != PHENOMENAL`, `CORRELATION != IDENTITY`, `PHASE_SIMILARITY != SEMANTIC_EQUIVALENCE`, `AFFECT != TRUTH`, `AFFECT_INFERENCE != DIAGNOSIS`, `RESONANCE != CONSCIOUSNESS`.

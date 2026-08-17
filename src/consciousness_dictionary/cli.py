@@ -6,6 +6,7 @@ from .compiler import write_compiled
 from .query import phase_similarity, declared_path, declared_neighbors, constrained_phase_path
 from .validate import validate
 from .phasenav_native import PhaseState
+from .affect_detection import AffectDetector
 
 def default_paths():
     root=Path(__file__).resolve().parents[2]
@@ -22,9 +23,14 @@ def main(argv=None):
     p=sub.add_parser('phase-path'); p.add_argument('start'); p.add_argument('end')
     p=sub.add_parser('neighbors'); p.add_argument('key'); p.add_argument('--include-negative',action='store_true')
     p=sub.add_parser('formula'); p.add_argument('formula_id')
+    p=sub.add_parser('affect'); p.add_argument('text')
     p=sub.add_parser('validate')
     p=sub.add_parser('compile'); p.add_argument('--out',default='build')
-    ns=ap.parse_args(argv); reg,rels,forms=default_paths(); lex=Lexicon.load(reg,rels)
+    ns=ap.parse_args(argv)
+    if ns.cmd=='affect':
+        print(json.dumps(AffectDetector().detect(ns.text).as_dict(),ensure_ascii=False,indent=2))
+        return
+    reg,rels,forms=default_paths(); lex=Lexicon.load(reg,rels)
     if ns.cmd=='stats': print(json.dumps({'terms':len(lex.terms),'relations':len(lex.relations)},indent=2))
     elif ns.cmd=='term': print(json.dumps(lex.get(ns.key).raw,ensure_ascii=False,indent=2))
     elif ns.cmd=='vector':
