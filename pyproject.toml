@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "consciousness-dictionary-phasenav"
+version = "0.2.0a0"
+description = "Executable PhaseNav ontology for the Relational-Informational Consciousness Dictionary"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+consciousness-dictionary = "consciousness_dictionary.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

@@ -1,0 +1,7 @@
+{
+  "states": 548,
+  "relations": 306,
+  "state_sha256": "56d758c54f27323ef7edcf5164d224801f182ec83cda04216953cfaeda135501",
+  "relation_sha256": "8484cd1314df4b18c21207b7fe234e71007e5c4c59aaf356cffd4abea0d36e8a",
+  "semantic_boundary": "Phase similarity is never semantic equivalence or epistemic authority."
+}

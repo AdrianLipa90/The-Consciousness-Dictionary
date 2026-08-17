@@ -1,0 +1,25 @@
+{
+  "schema": "clx2/formulas/v0.2",
+  "formulas": [
+    {"formula_id":"F-TIR-OVERLAP","name":"TIR / PhaseNav complex overlap","latex":"z(V,Q)=\\frac{1}{d}\\sum_{j=1}^{d}e^{i(Q_j-V_j)},\\quad d=36","status":"IMPLEMENTED_IDENTITY","terms":["Relational Coherence","Relational Phase","PhaseNav Relation Kernel"]},
+    {"formula_id":"F-TIR-COHERENCE","name":"Relational coherence","latex":"R(V,Q)=|z(V,Q)|^2","status":"IMPLEMENTED_DEFINITION","terms":["Relational Coherence","Projective Fidelity"]},
+    {"formula_id":"F-TIR-ACTION","name":"Informational action","latex":"S_{rel}(V,Q)=-\\kappa\\log(R(V,Q)+\\varepsilon),\\quad \\kappa=\\frac{\\ln2}{24\\pi}","status":"MODEL_DEFINITION","terms":["Informational Action","Information Preference Scale"]},
+    {"formula_id":"F-SUBJ","name":"Subjectivity transform","latex":"W_t=\\mathcal T_{subj}(X_t\\mid E_t)","status":"MODEL_DEFINITION","terms":["Subjectivity Transform","World-for-a-System"]},
+    {"formula_id":"F-RIFC-6D","name":"RIFC empirical coordinate scaffold","latex":"\\mathbf c(t)=[G(t),T(t),L(t),V(t),A(t),D(t)]","status":"MODEL_SCAFFOLD","terms":["Integration","Temporal Continuity","Self-Location","Valuation","Cognitive Access","Endogenous Direction"]},
+    {"formula_id":"F-RIFC-IDENTITY","name":"RIFC constitutive identity hypothesis","latex":"\\mathcal P_S(t)\\overset{RIFC}{\\equiv}\\operatorname{Intrinsic}_S[\\mathcal R_{\\Delta t}(t)]","status":"CONSTITUTIVE_HYPOTHESIS","terms":["First-Person Presence","Consciousness","Phenomenal Field"]},
+    {"formula_id":"F-QUALIA","name":"Relational qualia state","latex":"Q_t=[R_t,S_t,A_t,H_{\\gamma_t},I_t]","status":"MODEL_CLASS","terms":["Relational Qualia State","Qualia"]},
+    {"formula_id":"F-AFFECT-FIELD","name":"Affective valuation field","latex":"A_t(x)=(v_t(x),a_t(x),u_t(x),\\tau_t(x),\\alpha_t(x),r_t(x))","status":"MODEL_DEFINITION","terms":["Affective Field","Valence","Arousal","Urgency","Threat Relevance","Attachment Relevance","Reward Relevance"]},
+    {"formula_id":"F-SALIENCE","name":"Vector-valued salience","latex":"\\Sigma_t(x)=\\mathcal S(\\rho_t(x),A_t(x),I_t,H_{\\gamma_t},U_t(x))","status":"MODEL_DEFINITION","terms":["Salience","Affective Salience"]},
+    {"formula_id":"F-AFFECT-CURV","name":"Affective curvature","latex":"G_t^Q=G_t^0+M(A_t,S_t,I_t)","status":"MODEL_HYPOTHESIS","terms":["Affective Curvature","Phenomenal Geometry"]},
+    {"formula_id":"F-AFFECT-CHAIN","name":"Affect modulation causal chain","latex":"A_t\\rightarrow\\Sigma_t\\rightarrow\\{attention,recall,inhibition,exploration,consolidation\\}","status":"COMPUTATIONAL_HYPOTHESIS","terms":["Affect Modulation","Salience","Attention","Recall","Consolidation"]},
+    {"formula_id":"F-PNV-EMBED","name":"Exact 36-mode projective embedding","latex":"|\\psi(V)\\rangle=\\frac{1}{\\sqrt d}\\sum_{j=1}^{d}e^{i\\phi_j}|j\\rangle,\\quad d=36","status":"EXACT_MODEL_IDENTITY","terms":["PhaseNav 36-Mode Embedding"]},
+    {"formula_id":"F-PNV-FIDELITY","name":"Overlap identity","latex":"\\langle\\psi(V)|\\psi(Q)\\rangle=z(V,Q)","status":"EXACT_MODEL_IDENTITY","terms":["PhaseNav 36-Mode Embedding","Projective Fidelity"]},
+    {"formula_id":"F-PNV-QFIM","name":"36-mode QFIM","latex":"F_{ij}=4\\left(\\frac{\\delta_{ij}}d-\\frac1{d^2}\\right),\\quad \\operatorname{rank}F=35","status":"DERIVED_RESULT","terms":["PhaseNav QFIM"]},
+    {"formula_id":"F-PNV-FIDELITY-LOCAL","name":"Local fidelity loss","latex":"1-|z(V,V+dV)|^2=\\frac14 dV^T F dV+O(\\|dV\\|^3)","status":"DERIVED_LOCAL_RESULT","terms":["Fidelity Loss"]},
+    {"formula_id":"F-PNV-EDGE","name":"PhaseNav edge connection","latex":"A_k=\\frac1d\\sum_j\\sin(\\phi_{k+1,j}-\\phi_{k,j})=\\operatorname{Im}z(V_k,V_{k+1})","status":"IMPLEMENTED_DEFINITION","terms":["PhaseNav Edge Connection"]},
+    {"formula_id":"F-PNV-GAMMA","name":"PhaseNav trajectory functional","latex":"\\Gamma_{PN}=\\sum_k A_k","status":"IMPLEMENTED_DEFINITION","terms":["PhaseNav Trajectory Functional"]},
+    {"formula_id":"F-BARGMANN","name":"Bargmann/Pancharatnam loop phase","latex":"\\gamma_B(\\mathcal P)=\\arg\\prod_{k=1}^{n}\\frac{\\langle\\psi(V_k)|\\psi(V_{k+1})\\rangle}{|\\langle\\psi(V_k)|\\psi(V_{k+1})\\rangle|}","status":"ESTABLISHED_PROJECTIVE_GEOMETRY","terms":["Bargmann Loop Phase","Pancharatnam Phase"]},
+    {"formula_id":"F-SU2-RANK","name":"36D to SU2 rank bound","latex":"\\operatorname{rank}F_{SU(2)}\\le2<35=\\operatorname{rank}F_{36D}","status":"DERIVED_RANK_BOUND","terms":["Projection Rank Loss","SU2 Projection"]},
+    {"formula_id":"F-PNV-MASS","name":"PhaseNav semantic mass","latex":"m_k=\\kappa(1+\\alpha_M k)+\\frac{L_4}{L_3}R_k","status":"IMPLEMENTATION_QUANTITY","terms":["Term Semantic Mass"]}
+  ]
+}

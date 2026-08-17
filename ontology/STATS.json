@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0-alpha",
+  "term_count": 548,
+  "edge_count": 306,
+  "formula_count": 20,
+  "categories": {
+    "Affect, valuation and emotion dimensions": 31,
+    "Artificial systems and consciousness evidence": 17,
+    "Biological and neural realization": 18,
+    "Cognition, perception and metacognition": 29,
+    "Cognitive dynamics and ethics": 16,
+    "Computational realization": 10,
+    "Consciousness and phenomenology": 18,
+    "Embodiment, self-location and interoception": 22,
+    "Executable ontology and PhaseNav realization": 27,
+    "Geometry, phase and projective realization": 32,
+    "Information, semantics and meaning": 27,
+    "Intention, agency, control and planning": 34,
+    "Interpretive and speculative extensions": 6,
+    "Language, narrative and social cognition": 24,
+    "Measurement, experiment and falsification": 42,
+    "Meta-formal primitives": 20,
+    "Meta-formal primitives and systems": 33,
+    "Phase and geometry": 24,
+    "Phenomenology and first-person structure": 29,
+    "Relational information": 10,
+    "Self, affect, intention and agency": 26,
+    "Temporal organization and memory": 53
+  }
+}

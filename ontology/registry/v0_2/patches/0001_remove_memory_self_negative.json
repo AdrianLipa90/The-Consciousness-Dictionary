@@ -1,0 +1,10 @@
+{
+  "schema": "clx2/registry-patch/v1",
+  "patch_id": "0001_remove_memory_self_negative",
+  "term_id": "CLX2-TIME-004",
+  "operation": "replace_field",
+  "field": "not_equivalent_to",
+  "value": [],
+  "reason": "Legacy normalization accidentally created Memory NOT_EQUIVALENT_TO Memory. Self-negative edges are logically invalid.",
+  "status": "CANONICAL_CORRECTION"
+}
