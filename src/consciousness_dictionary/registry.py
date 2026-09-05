@@ -57,6 +57,18 @@ class Lexicon:
             with Path(path).open(encoding='utf-8') as f:
                 return [json.loads(line) for line in f if line.strip()]
         rp=Path(registry)
+        if rp.is_dir() and not (rp/'index.json').exists():
+            versions=sorted(
+                child for child in rp.iterdir()
+                if child.is_dir() and (child/'index.json').is_file()
+            )
+            if len(versions) == 1:
+                rp=versions[0]
+            elif not versions:
+                raise FileNotFoundError(f'no registry index found under {rp}')
+            else:
+                names=', '.join(x.name for x in versions)
+                raise ValueError(f'ambiguous versioned registry under {rp}: {names}')
         if rp.is_dir():
             idx=json.loads((rp/'index.json').read_text(encoding='utf-8'))
             terms=[]
