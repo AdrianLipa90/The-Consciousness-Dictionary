@@ -1,0 +1,15 @@
+{
+  "schema": "clx2/formula-candidate/v0.1",
+  "formula_id": "F-W-SEMANTIC-HOLONOMY",
+  "name": "Nonlocal semantic U(1) holonomy coupling",
+  "latex": "W^{sem}_{ij}[\\\\gamma]=\\\\exp(i\\\\int_{\\\\gamma_{ij}}A_{sem}),\\\\quad \\\\mathcal C_{ij}=W^{sem}_{ij}z(V_i,V_j)",
+  "status": "EXECUTABLE_MODEL_BINDING_CANDIDATE",
+  "epistemic": "CHYBA",
+  "canon_allowed": false,
+  "termset_mutated": false,
+  "notes": [
+    "A_sem is a semantic connection/potential, not the RIFC affect field A_t.",
+    "W_sem is a U(1) phase holonomy/nonlocal semantic coupling, not the weak W boson.",
+    "Physical gauge-field and signalling claims remain open."
+  ]
+}

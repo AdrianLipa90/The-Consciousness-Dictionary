@@ -84,6 +84,36 @@ def berry_holonomy(path: Sequence[Sequence[float]]) -> float:
     g += berry_connection(path[-1], path[0])
     return atan2(sin(g), cos(g))
 
+def u1_semantic_transport(edge_potentials: Sequence[float]) -> complex:
+    """Nonlocal U(1) semantic transporter W_sem[gamma] derived from A_sem edges.
+
+    A_sem is a semantic connection/potential. It is distinct from the RIFC affect
+    field A_t. This is a computational phase-transport observable, not evidence of
+    a physical gauge field or nonlocal signalling.
+    """
+    theta = sum(float(x) for x in edge_potentials)
+    return complex(cos(theta), sin(theta))
+
+
+def u1_semantic_holonomy_phase(edge_potentials: Sequence[float]) -> float:
+    """Wrapped phase arg(W_sem) for an open or explicitly closed declared path."""
+    w = u1_semantic_transport(edge_potentials)
+    return atan2(w.imag, w.real)
+
+
+def semantic_holonomy_coupling(
+    a: Sequence[float],
+    b: Sequence[float],
+    edge_potentials: Sequence[float],
+) -> complex:
+    """C_ij = <psi(a)| W_sem[gamma] |psi(b)> for scalar U(1) W_sem.
+
+    The 36-mode realization has <psi(a)|psi(b)> == inner_product(a,b);
+    scalar U(1) transport multiplies that overlap by a unit-modulus phase.
+    """
+    return u1_semantic_transport(edge_potentials) * inner_product(a, b)
+
+
 def relation_delta(a: Sequence[float], b: Sequence[float]) -> PhaseVector:
     if len(a) != len(b): raise ValueError("dimension mismatch")
     return tuple(circular_delta(x,y) for x,y in zip(a,b))
