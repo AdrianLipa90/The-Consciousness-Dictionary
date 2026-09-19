@@ -1,0 +1,30 @@
+name: Consciousness Dictionary semantic U1 holonomy
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/consciousness_dictionary/phasenav_native.py'
+      - 'src/consciousness_dictionary/__init__.py'
+      - 'docs/W_SEMANTIC_HOLONOMY.md'
+      - 'tests/test_semantic_holonomy.py'
+      - 'ontology/formulas/candidates/F_W_SEMANTIC_HOLONOMY_V0_1.json'
+      - '.github/workflows/cd-semantic-u1-holonomy.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  semantic-u1-holonomy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install package and pytest
+        run: python -m pip install -e . pytest
+      - name: Compile executable binding
+        run: python -m py_compile src/consciousness_dictionary/phasenav_native.py
+      - name: Run semantic U1 holonomy tests
+        run: python -m pytest -q tests/test_semantic_holonomy.py
