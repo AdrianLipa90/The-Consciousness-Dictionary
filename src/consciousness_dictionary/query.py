@@ -1,11 +1,51 @@
 from __future__ import annotations
 import heapq
+import math
 from .registry import Lexicon
-from .phasenav_native import PhaseState, relational_coherence, angular_distance, informational_action
+from .phasenav_native import (
+    PhaseState,
+    relational_coherence,
+    relational_phase,
+    angular_distance,
+    informational_action,
+)
 
 BLOCKED_PATH_RELATIONS={'NOT_EQUIVALENT_TO'}
 
 def _state(t): return PhaseState.from_term(t.term_id,t.phase_index,t.raw)
+
+def _external_vector36(vector) -> tuple[float, ...]:
+    v=tuple(float(x) for x in vector)
+    if len(v)!=36: raise ValueError('external PhaseNav state must have exactly 36 components')
+    if not all(math.isfinite(x) for x in v): raise ValueError('external PhaseNav state contains non-finite values')
+    return v
+
+def external_phase_projection(lexicon: Lexicon, vector, limit: int=16) -> list[dict]:
+    """Rank canonical terms against an external 36D PhaseNav state.
+
+    This is a computational retrieval projection for NEXUS-like consumers. Phase
+    similarity, salience, or rank does not create semantic equivalence, truth,
+    capability, or epistemic authority.
+    """
+    qv=_external_vector36(vector)
+    if limit<=0: return []
+    rows=[]
+    for t in lexicon.terms.values():
+        tv=_state(t).vector
+        coherence=relational_coherence(qv,tv)
+        rows.append({
+            'term_id':t.term_id,
+            'name':t.canonical_name,
+            'phase_index':t.phase_index,
+            'coherence':coherence,
+            'phase':relational_phase(qv,tv),
+            'angular_distance':angular_distance(qv,tv),
+            'informational_action':informational_action(qv,tv),
+            'semantic_equivalence':False,
+            'authority_grant':False,
+        })
+    rows.sort(key=lambda r:(-r['coherence'],r['informational_action'],r['angular_distance'],r['term_id']))
+    return rows[:min(int(limit),len(rows))]
 
 def phase_similarity(lexicon: Lexicon, key: str, limit: int=10) -> list[dict]:
     q=lexicon.get(key); qv=_state(q).vector
